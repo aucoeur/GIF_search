@@ -8,7 +8,12 @@
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
     the search term to the query string -->
 {% block content %}
-Bellow, girl!
+<h1> {{ section }}</h1>
+<h2>{{ subtitle }}</h2>
+<form action='/gif'>
+    <input type="text" name="search" placeholder="Search"/>
+    <button type="submit">Submit</button>
+</form>
 {% endblock %}
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
