@@ -6,21 +6,26 @@
 {% endblock %}
 
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
-    the search term to the query string -->
+    the search term to the query string. The form should have a target of '/' to
+    send us to the same route. -->
 {% block content %}
 <h1> {{ section }}</h1>
 <h2>{{ subtitle }}</h2>
 
-<div>
+<div id="intro">
     {{ stuff|safe }}
 </div>
-<div>
+
+<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
+
+<!-- TODO: For each gif, include the 'gif.html' template to display it -->
+
+<div id="gif">
     {% for gif in gif_output %}
         {% include 'gif.html' %}
     {% endfor %}
 </div>
 
 {% endblock %}
-<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
-<!-- TODO: For each gif, include the 'gif.html' template to display it -->
+
