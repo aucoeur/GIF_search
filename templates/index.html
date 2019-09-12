@@ -16,6 +16,15 @@
     {{ stuff|safe }}
 </div>
 
+<!-- The search bar. Inside the search bar it says "Search GIF's" with button-->
+<div class="topnav">
+  <div class="search-container">
+      <input type="text" placeholder="Search GIF's" name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+  </div>
+</div>
+
+
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
@@ -27,5 +36,3 @@
 </div>
 
 {% endblock %}
-
-
