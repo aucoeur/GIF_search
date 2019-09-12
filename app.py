@@ -46,7 +46,16 @@ def index():
         section = section,
         subtitle = subtitle,
         stuff = stuff,
+        query =  query,
         gif_output = gif_output)
+
+# @app.route('/gif')
+# def get_gif():
+#     query = request.args.get('search')
+
+#     return render_template('gif.html',
+#     query = query,
+#     gif_output = gif_output)
 
 if __name__ == '__main__':
     app.run(debug=True)
