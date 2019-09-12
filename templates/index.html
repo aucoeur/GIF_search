@@ -15,7 +15,7 @@
 <div id="intro">
     {{ stuff|safe }}
 </div>
-
+<br /><br />
 <!-- The search bar. Inside the search bar it says "Search GIF's" with button-->
 <!-- <div class="topnav">
   <div class="search-container">
@@ -23,10 +23,12 @@
       <button type="submit" value="Submit"></button>
   </div>
 </div> -->
-<form>
-    <input type="search" value="Search GIF's"><button type="submit" value="Search"></button>
+<div id="search box">
+<form action="/">
+    <input type="search" placeholder="Search GIFs" name="search"><button type="submit">Search</button>
 </form>
-
+</div>
+<br /><br /><br />
 
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 

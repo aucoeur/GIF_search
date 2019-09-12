@@ -1,1 +1,7 @@
 /* make it look nice */
+
+#intro {
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+}
