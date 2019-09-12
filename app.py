@@ -13,7 +13,7 @@ def index():
     stuff = 'Dear Diary,<br /><br />It\'s me, Laganja.  <br /><br />Today all the girls sat separate from me and I lived alone under a table.<br /><br />'
     
     # TODO: Extract the query term from url using request.args.get()
-    query = 'laganja'
+    query = request.args.get('search')
 
     # TODO: Make 'params' dictionary containing:
     # a) the query term, 'q'
@@ -22,10 +22,9 @@ def index():
 
     params = {'q': query,
         'key': '7YRWBT7DN78Q',
-        'limit': '1'}
+        'limit': '10'}
 
-    # TODO: Make an API call to Tenor using the 'requests' library. For 
-    # reference on how to use Tenor, see: 
+    # TODO: Make an API call to Tenor using the 'requests' library. For reference on how to use Tenor, see: 
     # https://tenor.com/gifapi/documentation
 
     r = requests.get("https://api.tenor.com/v1/search", params=params)
@@ -48,9 +47,6 @@ def index():
         subtitle = subtitle,
         stuff = stuff,
         gif_output = gif_output)
-
-# @app.route('/gif')
-# def get_gif():
 
 if __name__ == '__main__':
     app.run(debug=True)
