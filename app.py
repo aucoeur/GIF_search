@@ -57,7 +57,6 @@ def index():
         section = section,
         subtitle = subtitle,
         stuff = stuff,
-        #query = query,
         gif_output = gif_output)
 
 if __name__ == '__main__':
