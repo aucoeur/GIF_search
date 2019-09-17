@@ -8,6 +8,8 @@
 
 body {
   color: black;
+  background-image: url('https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1946696/910/606/m2/fpnw/wm1/aervcnrit7oq1lxa5hva5vsehrugsbt0zrxfdfqh7nscboedpcy7gwmz9oymhitz-.jpg?1480083289&s=09318712b5b550268a6d8ac3f3c7aa4a');
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -21,6 +23,7 @@ h1 {
   color: rgb(108, 187, 196);
   font-family: 'Faster One', cursive;
   text-align: center;
-  font-size: 47px;
+  font-size: 50px;
+  border: 10px solid black;
 
 }
