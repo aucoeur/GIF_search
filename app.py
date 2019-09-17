@@ -14,22 +14,34 @@ def index():
     subtitle = 'compliments of Tenor API'
     stuff = 'Dear Diary,<br /><br />It\'s me, Laganja.  <br /><br />Today all the girls sat separate from me and I lived alone under a table.<br /><br />'
     
-    """Extract the query term from url using request.args.get()"""
-    
-    query = request.args.get('search')
+    url = "http://api.tenor.com/v1/"
+    request_type = request.args.get('request')
 
     """'params' dictionary contains:
     # a) the query term, 'q'
     # b) our API key, 'key'
     # c) how many GIFs to return, 'limit'"""
-
-    params = {'q': query,
+    params = {
         'key': '7YRWBT7DN78Q',
         'limit': '10'}
 
+    if request_type == "trending":
+        query_link = url + "trending"
+    else:
+        query = request.args.get('search')
+        if request_type == "random": 
+            """Extract the query term from url using request.args.get()"""
+            query_link = url + "random"
+        else:
+            """Extract the query term from url using request.args.get()"""
+            query_link = url + "search"
+
+        """Add query to params"""
+        params.update({ 'q' : query })      
+
     """Make an API call to Tenor using the 'requests' library. For reference on how to use Tenor, see: https://tenor.com/gifapi/documentation"""
 
-    r = requests.get("https://api.tenor.com/v1/search", params=params)
+    r = requests.get(query_link, params = params)
 
     """Uses '.json()' function to get the JSON of the returned response object"""
 
@@ -45,7 +57,7 @@ def index():
         section = section,
         subtitle = subtitle,
         stuff = stuff,
-        query =  query,
+        #query = query,
         gif_output = gif_output)
 
 if __name__ == '__main__':
