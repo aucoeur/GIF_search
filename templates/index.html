@@ -1,40 +1,30 @@
-<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+<!-- Extends 'base.html' to make 'index.html' official HTML compliant -->
 {% extends 'base.html' %}
 
-{% block title %}
-    GIF Search !
-{% endblock %}
-
-<!-- TODO: Make an HTML form containing a search box and a submit button to add
-    the search term to the query string. The form should have a target of '/' to
-    send us to the same route. -->
-{% block content %}
+{% block body %}
 <h1> {{ section }}</h1>
 <h2>{{ subtitle }}</h2>
 
 <div id="intro">
+    <!-- Intro text, with safe filter to bypass auto-escaping HTML in stuff -->
     {{ stuff|safe }}
 </div>
 <br /><br />
-<!-- The search bar. Inside the search bar it says "Search GIF's" with button-->
-<!-- <div class="topnav">
-  <div class="search-container">
-      <input type="text" placeholder="Search GIF's" name="search">
-      <button type="submit" value="Submit"></button>
-  </div>
-</div> -->
-<div id="search box">
-<form action="/">
-    <input type="search" placeholder="Search GIFs" name="search"><button type="submit">Search</button>
-</form>
+
+<div id="search_box">
+    <!-- Input box for GIF query -->
+    <form action="/">
+        <input type="search" placeholder="Search GIFs" name="search">
+        <button type="submit">Search</button>
+    </form>
 </div>
-<br /><br /><br />
-
-<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-
-<!-- TODO: For each gif, include the 'gif.html' template to display it -->
+<br />
+<br />
+<br />
 
 <div id="gif">
+    <!-- If results != 0, for each gif, include the 'gif.html' template to display it, else display error message -->
+
     {% if gif_output|length  %}
         {% for gif in gif_output %}
             {% include 'gif.html' %}<br /><br />
