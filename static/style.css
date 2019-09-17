@@ -18,8 +18,9 @@ img {
 
 /* The heading should be red and cursive */
 h1 {
-  color: red;
-  font-family: cursive;
+  color: rgb(108, 187, 196);
+  font-family: 'Faster One', cursive;
   text-align: center;
+  font-size: 47px;
 
 }
