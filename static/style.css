@@ -6,8 +6,20 @@
   text-align: center;
 }
 
+body {
+  color: black;
+  background-size: cover;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+/* The heading should be red and cursive */
 h1 {
   color: red;
   font-family: cursive;
+  text-align: center;
 
 }
