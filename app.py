@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
-import requests
-import json
+import os, requests, json
+
+"""Loads API key from .env"""
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 app = Flask(__name__)
 
@@ -8,36 +12,37 @@ app = Flask(__name__)
 def index():
     """Returns homepage"""
 
-    """Intro text"""
-
+    """Heading"""
     section = 'WELCOME TO GIF SEARCH'
     subtitle = 'compliments of Tenor API'
-    stuff = 'Dear Diary,<br /><br />It\'s me, Laganja.  <br /><br />Today all the girls sat separate from me and I lived alone under a table.<br /><br />'
     
     url = "http://api.tenor.com/v1/"
     request_type = request.args.get('request')
 
     """'params' dictionary contains:
-    # a) the query term, 'q'
-    # b) our API key, 'key'
-    # c) how many GIFs to return, 'limit'"""
+        a) our API key, 'key'
+        b) how many GIFs to return, 'limit'
+        c) and depending on situation, the search term, 'query'"""
     params = {
-        'key': '7YRWBT7DN78Q',
+        'key': api_key,
         'limit': '10'}
 
+    """Add correct link address"""
     if request_type == "trending":
         query_link = url + "trending"
+    elif request_type == "rpdr":
+        params.update({ 'q' : 'laganja' }) 
+        query_link = url + "search"
     else:
         query = request.args.get('search')
+        
+        """Add query to params"""
+        params.update({ 'q' : query })  
+        
         if request_type == "random": 
-            """Extract the query term from url using request.args.get()"""
             query_link = url + "random"
         else:
-            """Extract the query term from url using request.args.get()"""
-            query_link = url + "search"
-
-        """Add query to params"""
-        params.update({ 'q' : query })      
+            query_link = url + "search"    
 
     """Make an API call to Tenor using the 'requests' library. For reference on how to use Tenor, see: https://tenor.com/gifapi/documentation"""
 
@@ -56,7 +61,6 @@ def index():
     return render_template('index.html', 
         section = section,
         subtitle = subtitle,
-        stuff = stuff,
         gif_output = gif_output)
 
 if __name__ == '__main__':

@@ -2,11 +2,12 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<<<<<<< HEAD
 <h1> {{ section }}</h1>
 <!-- <h2>{{ subtitle }}</h2> -->
 
 <!-- Shows image below the heading -->
-<img src="https://media.giphy.com/media/Y3TRqTGdysJqkOizDF/giphy-downsized.gif" rel="stylesheet">
+<img src="https://media.giphy.com/media/Y3TRqTGdysJqkOizDF/giphy-downsized.gif">
 <br /><br />
 
 <!-- Search box and red search button -->
@@ -21,18 +22,41 @@
             <button type="submit" name="request" value="trending" class="btn btn-outline-dark btn-sm">Trending</button>
             <button type="button" formaction="/" class="btn btn-outline-dark btn-sm">Drag Race</button>
         </form>
+=======
+<div class="center">
+    <h1> {{ section }}</h1>
+    <h2>{{ subtitle }}</h2>
+
+    <!-- Shows image below the heading -->
+    <img src="https://media.giphy.com/media/Y3TRqTGdysJqkOizDF/giphy-downsized.gif">
+    <br /><br />
+
+    <!-- Search box and search buttons -->
+    <div id="search_box" class="text-center">
+        <div id="presetbuttons" class="text-center"></div>
+            <form action="/">
+                <input type="search" placeholder="Search GIFs      " name="search" id="search">
+                <button type="submit" name="request" value="search" class="btn btn-outline-danger btn-lg">Search</button><br />
+                
+                <!-- Buttons for trending, random, and drag race -->
+                <div class="btn-group m-1" role="group" aria-label="second group">
+                    <button type="submit" name="request" value="random" class="btn btn-outline-dark btn-lg">Random</button> &nbsp;
+                    <button type="submit" name="request" value="trending" class="btn btn-outline-dark btn-lg">Trending</button> &nbsp;
+                    <button type="submit" name="request" value="rpdr" class="btn btn-outline-dark btn-lg">RPDR</button> &nbsp;
+                </div>
+            </form>
+        </div>
+>>>>>>> d0ca1278a8f7573f478300a7dad7cd2a4cb5126c
     </div>
 </div>
 
-
-<br />
 <br />
 <br />
 
 <div id="gif">
     <!-- If results != 0, for each gif, include the 'gif.html' template to display it, else display error message -->
 
-    {% if gif_output|length  %}
+    {% if gif_output|length != 0  %}
         {% for gif in gif_output %}
             {% include 'gif.html' %}<br /><br />
         {% endfor %}
