@@ -3,19 +3,20 @@
 
 {% block body %}
 <h1> {{ section }}</h1>
-<h2>{{ subtitle }}</h2>
+<!-- <h2>{{ subtitle }}</h2> -->
 
 <!-- Shows image below the heading -->
 <img src="https://media.giphy.com/media/Y3TRqTGdysJqkOizDF/giphy-downsized.gif" rel="stylesheet">
 <br /><br />
 
-<!-- Search box and search buttons -->
+<!-- Search box and red search button -->
 <div id="search_box" class="text-center">
     <div id="presetbuttons" class="text-center"></div>
         <form action="/">
             <input type="search" placeholder="Search GIFs" name="search">
-            <button type="submit" name="request" value="search" class="btn btn-outline-danger btn-sm">Search</button><br />
-            <!-- Buttons for trending, random, and drag race -->
+            <button type="submit" name="request" value="search" class="btn btn-outline-danger btn-sm">Search</button>
+            <br />
+            <!-- Buttons for trending, random, and drag race in black-->
             <button type="submit" name="request" value="random" class="btn btn-outline-dark btn-sm">Random</button>  
             <button type="submit" name="request" value="trending" class="btn btn-outline-dark btn-sm">Trending</button>
             <button type="button" formaction="/" class="btn btn-outline-dark btn-sm">Drag Race</button>
