@@ -1,6 +1,5 @@
 /* make it look nice */
 
-
 body {
   color: rgb(215, 224, 221);
   background-repeat: no-repeat;
@@ -10,19 +9,34 @@ body {
 img {
   display: block;
   margin: auto;
+  width: 50%;
 }
 
 /* The heading should be red and cursive */
 h1 {
   color: rgb(108, 187, 196);
-  text-align: center;
-  font-size: 50px;
   border: 10px solid black;
+  text-align: center;
+}
 
+h2 {
+  text-align: center;
 }
 
 #gif {
   display: block;
-  margin: auto;
   text-align: center;
+  margin: auto;
+  width: 50%;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+.tenor-gif-embed {
+  display: inline-block;
+  margin: auto;
+  width: 50%;
 }
