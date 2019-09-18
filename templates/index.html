@@ -15,7 +15,8 @@
         <div id="presetbuttons" class="text-center"></div>
             <form action="/">
                 <input type="search" placeholder="Search GIFs      " name="search" id="search">
-                <button type="submit" name="request" value="search" class="btn btn-outline-danger ">Search</button><br />
+                <button type="submit" name="request" value="search" class="btn btn-outline-danger btn-lg">Search</button><br />
+                
                 <!-- Buttons for trending, random, and drag race -->
                 <div class="btn-group m-1" role="group" aria-label="second group">
                     <button type="submit" name="request" value="random" class="btn btn-outline-dark btn-lg">Random</button> &nbsp;
@@ -33,7 +34,7 @@
 <div id="gif">
     <!-- If results != 0, for each gif, include the 'gif.html' template to display it, else display error message -->
 
-    {% if gif_output|length  %}
+    {% if gif_output|length != 0  %}
         {% for gif in gif_output %}
             {% include 'gif.html' %}<br /><br />
         {% endfor %}

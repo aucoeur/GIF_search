@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
-import requests
-import json
+import os, requests, json
+
+"""Loads API key from .env"""
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 app = Flask(__name__)
 
@@ -20,7 +24,7 @@ def index():
         b) how many GIFs to return, 'limit'
         c) and depending on situation, the search term, 'query'"""
     params = {
-        'key': '7YRWBT7DN78Q',
+        'key': api_key,
         'limit': '10'}
 
     """Add correct link address"""
