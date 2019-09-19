@@ -31,18 +31,19 @@
 <br />
 <br />
 
-<div id="gif">
+<div class="container">
     <!-- If results != 0, for each gif, include the 'gif.html' template to display it, else display error message -->
     {% if gif_output|length != 0  %}
-    <!-- {% for row in rows %} -->
-      <div class="row">
-          {% for gif in gif_output %}
-            <div class="col-md-3">{% include 'gif.html' %}<br /><br /></div>
-          {% endfor %}
-          {% else %}
+        <div class="row justify-content-center">
+            {% for gif in gif_output %}
+                <div class="span4">
+                    {% include 'gif.html' %} &nbsp;&nbsp;&nbsp;
+                </div>
+            {% endfor %}
+        </div> 
+    {% else %}
         No results found.  Please try another search.
-        {% endif %}
-      </div>
+    {% endif %}
 </div>
 <!-- This code is used to create a 3 by 3 grid of the GIFS -->
 <!-- <div class="container">

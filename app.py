@@ -25,7 +25,7 @@ def index():
         c) and depending on situation, the search term, 'query'"""
     params = {
         'key': api_key,
-        'limit': '10'}
+        'limit': '9'}
 
     """Add correct link address"""
     if request_type == "trending":

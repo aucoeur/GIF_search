@@ -24,7 +24,7 @@ h2 {
   text-align: center;
 }
 
-#gif {
+.container {
   display: block;
   text-align: center;
   margin: auto;
