@@ -30,18 +30,21 @@
 
 <br />
 <br />
-
-<div id="gif">
+<!-- Created a 3x3 grid to display GIF's -->
+<div class="container">
     <!-- If results != 0, for each gif, include the 'gif.html' template to display it, else display error message -->
-
     {% if gif_output|length != 0  %}
-        {% for gif in gif_output %}
-            {% include 'gif.html' %}<br /><br />
-        {% endfor %}
+        <div class="row justify-content-center">
+            {% for gif in gif_output %}
+                <div class="span4">
+                    {% include 'gif.html' %} &nbsp;&nbsp;&nbsp;
+                </div>
+            {% endfor %}
+        </div> 
     {% else %}
         No results found.  Please try another search.
     {% endif %}
-    
 </div>
+
 
 {% endblock %}
