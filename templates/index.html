@@ -30,7 +30,7 @@
 
 <br />
 <br />
-
+<!-- Created a 3x3 grid to display GIF's -->
 <div class="container">
     <!-- If results != 0, for each gif, include the 'gif.html' template to display it, else display error message -->
     {% if gif_output|length != 0  %}
@@ -45,41 +45,6 @@
         No results found.  Please try another search.
     {% endif %}
 </div>
-<!-- This code is used to create a 3 by 3 grid of the GIFS -->
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-sm">
-        Column 1 row 1
-        </div>
-        <div class="col-sm">
-        column 2 row 1
-         </div>
-         <div class="col-sm">
-        column 3 row 1
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm">
-              Column 1 row 2
-        </div>
-        <div class="col-sm">
-              column 2 row 2
-         </div>
-        <div class="col-sm">
-              column 3 row 2
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm">
-             Column 1 row 3
-         </div>
-        <div class="col-sm">
-            column 2 row 3
-          </div>
-         <div class="col-sm">
-             column 3 row 3
-         </div>
-    </div>
-  </div> -->
+
 
 {% endblock %}
