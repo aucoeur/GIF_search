@@ -46,7 +46,7 @@ def index():
 
     """Make an API call to Tenor using the 'requests' library. For reference on how to use Tenor, see: https://tenor.com/gifapi/documentation"""
 
-    r = requests.get(query_link, params = params)
+    r = requests.get(query_link, params)
 
     """Uses '.json()' function to get the JSON of the returned response object"""
 
